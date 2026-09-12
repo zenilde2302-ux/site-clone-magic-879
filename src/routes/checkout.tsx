@@ -20,13 +20,13 @@ import { Footer } from "@/components/site/Footer";
 import { PROMOS, brl } from "@/data/latorre";
 import { createIronPayTransaction } from "@/lib/ironpay.functions";
 
-type Search = { promo: string; nights: number; guests: number };
+type Search = { promo?: string | undefined; nights?: number | undefined; guests?: number | undefined };
 
 export const Route = createFileRoute("/checkout")({
   validateSearch: (search: Record<string, unknown>): Search => ({
-    promo: typeof search["promo"] === "string" ? search["promo"] : "janeiro-2027",
-    nights: Number(search["nights"]) > 0 ? Number(search["nights"]) : 5,
-    guests: Number(search["guests"]) > 0 ? Number(search["guests"]) : 2,
+    promo: typeof search["promo"] === "string" ? search["promo"] : undefined,
+    nights: Number(search["nights"]) > 0 ? Number(search["nights"]) : undefined,
+    guests: Number(search["guests"]) > 0 ? Number(search["guests"]) : undefined,
   }),
   head: () => ({
     meta: [
