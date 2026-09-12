@@ -60,7 +60,7 @@ const labelCls = "mb-1.5 block text-[13px] font-semibold text-brand-navy";
 function CheckoutPage() {
   const search = Route.useSearch();
   const promo = useMemo(
-    () => PROMOS.find((p) => p.slug === search.promo) ?? PROMOS[0],
+    () => PROMOS.find((p) => p.slug === search.promo) ?? PROMOS[0]!,
     [search.promo],
   );
   const nights = search.nights ?? 5;
