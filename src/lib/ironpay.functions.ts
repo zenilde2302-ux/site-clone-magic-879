@@ -100,8 +100,8 @@ export const createIronPayTransaction = createServerFn({ method: "POST" })
 
     if (data.paymentMethod === "credit_card") {
       if (!data.card) throw new Error("Preencha os dados do cartão.");
-      body.installments = data.installments;
-      body.card = {
+      body["installments"] = data.installments;
+      body["card"] = {
         number: digits(data.card.number),
         holder_name: data.card.holder_name,
         exp_month: Number(data.card.exp_month),
