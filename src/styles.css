@@ -142,3 +142,44 @@
     color: var(--color-foreground);
   }
 }
+
+/* ── Resort La Torre design system ─────────────────────────────── */
+@theme {
+  --font-sans: "Montserrat", ui-sans-serif, system-ui, sans-serif;
+  --color-brand-blue: oklch(0.573 0.128 244.6);
+  --color-brand-blue-dark: oklch(0.44 0.115 246);
+  --color-brand-navy: oklch(0.42 0.11 248);
+  --color-brand-orange: oklch(0.695 0.155 45);
+  --color-brand-amber: oklch(0.824 0.148 80);
+  --color-brand-olive: oklch(0.9 0.09 118);
+  --color-brand-sand: oklch(0.985 0.004 95);
+  --color-brand-ink: oklch(0.26 0.03 250);
+}
+
+:root {
+  --background: oklch(0.985 0.004 95);
+  --foreground: oklch(0.26 0.03 250);
+  --primary: oklch(0.573 0.128 244.6);
+  --primary-foreground: oklch(1 0 0);
+  --ring: oklch(0.573 0.128 244.6);
+  --radius: 0.75rem;
+}
+
+body {
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+@utility container-lt {
+  width: 100%;
+  margin-inline: auto;
+  padding-inline: 1rem;
+  max-width: 1200px;
+}
+
+@utility no-scrollbar {
+  scrollbar-width: none;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
